@@ -1,12 +1,14 @@
+
 import ThemeToggle from "./ThemeToggle";
 
 function Navbar({
   darkMode,
   setDarkMode,
+  searchTerm,
+  setSearchTerm,
 }) {
   return (
     <nav className="navbar">
-
       <div className="logo">
         🍔 FoodApp
       </div>
@@ -16,6 +18,8 @@ function Navbar({
         <input
           type="text"
           placeholder="Rechercher un plat..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
 
@@ -23,7 +27,6 @@ function Navbar({
         darkMode={darkMode}
         setDarkMode={setDarkMode}
       />
-
     </nav>
   );
 }
